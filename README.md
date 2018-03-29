@@ -1,3 +1,3 @@
-# Differential Equation Programming Assignment
+# Differential Equations Programming Assignment
 Kuleykin Vladislav
 Variant 11
