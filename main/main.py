@@ -9,15 +9,16 @@ show_opt = 0
 ALGORITHMS = ['Euler', 'Improved Euler', 'Runge-Kutta']
 ALG_CLR = ['g', 'r', 'b']
 
-# Check if all needed modules are installed, if they are not install them
-import pip
-import importlib
+
+# Check if all needed modules are installed, if they are not install them.
+from pip._internal import main
+from importlib import util
 
 module_names = ['PyQt5', 'pyqtgraph', 'numpy']
 for m_name in module_names:
-    if not importlib.util.find_spec(m_name):
+    if not util.find_spec(m_name):
         if input('Module not found {}, would you mind to install it?'.format(m_name)).lower() in 'y':
-            if pip.main(['install', m_name]):
+            if main(['install', m_name]):
                 print('Installing {}...'.format(m_name))
 
 from PyQt5 import QtGui, QtCore
